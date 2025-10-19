@@ -45,7 +45,7 @@ run_test() {
         ./update_disk.sh "$update_disk_file" >/dev/null 2>&1
     fi
 
-    make run A="$app" BLK="$blk" >"$tmp_file" 2>&1
+    make run A="$app" BLK="$blk" 2>&1 | tee $tmp_file
     local OUTPUT=$?
 
     local SEARCH=0
